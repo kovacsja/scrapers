@@ -2,7 +2,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 from time import sleep
 
-WEBDRIVER_PATH:str = "/home/honfi/Documents/Python/misc_projects/webscrape_selenium/chromedriver"
+WEBDRIVER_PATH:str = "chromedriver"
 url:str = "https://www.netrisk.hu/lakasbiztositas.html"
 
 browser = webdriver.Chrome(WEBDRIVER_PATH)

@@ -9,7 +9,7 @@ def isnull_(elem):
     else:
         return elem.text.strip()
 
-WEBDRIVER_PATH:str = "/home/honfi/Documents/Python/misc_projects/webscrape_selenium/chromedriver"
+WEBDRIVER_PATH:str = "chromedriver"
 url:str = "https://ingatlan.com/lista/elado+lakas+budapest"
 browser = webdriver.Chrome(WEBDRIVER_PATH) #letöltött chrome driver path
 browser.implicitly_wait(15)
