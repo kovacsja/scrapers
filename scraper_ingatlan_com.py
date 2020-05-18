@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import pandas as pd
-from datetime import now
+import datetime as dt
 
 def isnull_(elem):
     if elem == None:
@@ -42,17 +42,17 @@ def parse_listings(bsoup: BeautifulSoup) -> pd.DataFrame:
             isnull_(balc), 
             rooms.text.strip(), 
             link, 
-            now().isoformat()])
+            dt.datetime.now().isoformat()])
 
     return pd.DataFrame(d, columns=["id", "price", "price_sqm", "address", "area", "balcony", "rooms", "listing_link", "datetime"])
 
-
+# TODO: befejezni a részletek feldolgozását
 def parse_details(bsoup:BeautifulSoup) -> pd.DataFrame:
     det = bsoup.find("div", class_="card details")
     
     d = []
     return pd.DataFrame(d, columns=[])
     
-print(parse_listings(soup))
+parse_listings(soup).to_csv("minta.csv")
     
 browser.close()
