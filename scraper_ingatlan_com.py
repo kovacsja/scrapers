@@ -50,9 +50,9 @@ def parse_listings(bsoup: BeautifulSoup) -> pd.DataFrame:
 def parse_details(bsoup:BeautifulSoup) -> pd.DataFrame:
     det = bsoup.find("div", class_="card details")
     
-    d = []
+    d:list[str] = []
     return pd.DataFrame(d, columns=[])
     
-parse_listings(soup).to_csv("minta.csv")
+parse_listings(soup).to_csv("minta5.csv")
     
 browser.close()
